@@ -1,0 +1,54 @@
+HealthXP code base step-by-step setup instructions
+
+Following this guide: https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react
+
+1. Clone the MSDT-Team5-HealthXP repo in GitHub
+2. Install python3, plus pip: https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-python-3
+    - For Windows 10, needed to install Windows Terminal and python3 through the MSFT store
+    - Run 'refreshenv' in the terminal after installing python3, then continue with the setup guide
+3. Install backend dependencies:
+    - In the Windows Terminal: (running as admin of course)
+    - Clone the repo
+    - Navigate to the repo's root directory    
+    - Run the following:
+        - pip install pipenv
+        - pipenv shell
+            - if above doesn't work, run specifing the python path, in my case: --python C:\python310\python.exe
+        - cd to the 'backend' directory
+        - pipenv install
+        - pipenv install djangorestframework django-cors-headers
+4. Install nodeJS and npm
+    - Follow this guide: https://phoenixnap.com/kb/install-node-js-npm-on-windows
+    - After completing the installation, open a new terminal and type 'node -v' and 'npm -v'
+5. Install frontend dependencies:
+    - Go to the repo, cd into 'frontend' folder
+    - Run 'pipenv shell' to create the python virtural environment
+    - Run 'npm install' to install the dependencies
+6. To run the application:
+    - In one Windows Terminal:
+        - Run 'pipenv shell'
+        - Navigate to backend folder
+        - Run 'python manage.py runserver'
+    - In a second Windows Terminal:
+        - Navigate to the 'frontend' folder
+        - Run 'npm start'
+    - In a new browser window, go to localhost:3000
+
+** TODO: create a dedicated virtual environment for running the app **
+
+
+Development plan notes:
+
+User should be able to:
+- enter info about themselves and their condition
+- create and schedule habits
+- track medication schedules
+- set up dietary guidelines (enter food amts recommended by doc, log their meals)
+- schedule recurring activities
+- view a calendar where they can see all upcoming activities/reminders
+- track how well they're adhering to their habits
+
+
+End product should have:
+- pages for: profile, recurring habits, one-off tasks, calendar
+- need data models for: profile, habit, task
