@@ -28,3 +28,7 @@ function Calendar() {
 }
 
 export default Calendar;
+
+/*
+Upgrade npm modules and try using this calendar npm package: https://reactjsexample.com/react-calendar-component-with-support-for-multiple-views-and-events/
+*/
